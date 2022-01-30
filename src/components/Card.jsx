@@ -1,6 +1,8 @@
 import React from 'react';
 import CardTemp from './CardTemp';
 import PropTypes from 'prop-types';
+import styles from "./Card.module.css"
+import {IoCloseCircleOutline} from "react-icons/io5";
 
 export default function Card({max,min,name,img,onClose}) {
   // acá va tu código
@@ -8,9 +10,11 @@ export default function Card({max,min,name,img,onClose}) {
     if(typeof onClose === "function") onClose();
   }
     return (
-  <div>
-      <button onClick={handleOnClose}>x</button>
-      <h3>{name}</h3>
+  <div className={styles.card}>
+      <button className={styles.closeButton} onClick={handleOnClose}>
+      <IoCloseCircleOutline/>
+        </button>
+      <h3 className={styles.cityName}>{name}</h3>
       <CardTemp label="Min" value={min} />
       <CardTemp label="Max" value={max} />
       <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt='imagen del clima'/>

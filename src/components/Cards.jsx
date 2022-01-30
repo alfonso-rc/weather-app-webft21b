@@ -1,5 +1,9 @@
 import React from 'react';
 import Card from './Card';
+
+import styles from "./Cards.module.css";
+
+
 //en cards renderizamos card.recibira un arreglo de ciudades 
 
 export default function Cards({cities}) {
@@ -8,7 +12,7 @@ export default function Cards({cities}) {
   // pasamos las propiedades con destructurin de App.js a este lugar con Card
   
   return ( 
-  <div>
+  <div className ={styles.cards} >
         {cities.map((city)=>(/* propiedades que estan en App.js*/
         <Card 
           key={city.id}
